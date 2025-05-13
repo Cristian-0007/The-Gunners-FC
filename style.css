@@ -1,0 +1,281 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Header */
+header {
+    position: fixed;
+    /* ← lo hace fijo */
+    top: 0;
+    /* ← lo ancla arriba */
+    width: 100%;
+    /* ← ocupa todo el ancho */
+    z-index: 1000;
+    /* ← se asegura de estar por encima del resto */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #000000;
+    border-bottom: 2px solid #D4AF37;
+}
+
+
+
+.logo img {
+    height: 70px;
+}
+
+.barra_navegacion {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.barra_navegacion li a {
+    color: #D4AF37;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.barra_navegacion li a:hover {
+    color: #ffffff;
+}
+
+/* Sección Inicio */
+.inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_inicio2.jpg') no-repeat center center/cover;
+    scroll-margin-top: 100px;
+    /* agregado */
+}
+
+.contenido-inicio h1 {
+    font-size: 3rem;
+    color: #D4AF37;
+}
+
+.contenido-inicio p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000000;
+    border-top: 2px solid #D4AF37;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .barra_navegacion {
+        flex-direction: column;
+        padding-top: 140px;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .inicio {
+
+        height: 80vh;
+        padding: 20px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    .contenido-inicio p {
+        font-size: 1.2rem;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Sección Acerca */
+.acerca {
+    padding: 80px 20px;
+    padding-top: 100px;
+    /* ← espacio para que no lo tape el header */
+    scroll-margin-top: 100px;
+    /* agregado */
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_profes.jpg') no-repeat center center/cover;
+}
+
+.contenido-acerca h2 {
+    font-size: 2.8rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+.contenido-acerca p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #dddddd;
+}
+
+.mision-vision {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.mision,
+.vision {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 350px;
+    border: 2px solid #D4AF37;
+}
+
+.mision h3,
+.vision h3 {
+    font-size: 1.8rem;
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.mision p,
+.vision p {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+/* Responsive Acerca */
+@media (max-width: 768px) {
+    .mision-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Sección Equipación */
+
+.equipación {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    padding-top: 100px;
+    /* ← espacio para que no lo tape el header */
+    scroll-margin-top: 100px;
+    /* agregado */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_equipacion1.jpg') no-repeat center center/cover;
+}
+
+.contenido-equipación h4 {
+    font-size: 2.8rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+.contenido-equipación p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: #dddddd;
+}
+
+/* Responsive Equipación */
+@media (max-width: 768px) {
+    .mision-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Sección Galeria */
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    padding-top: 100px;
+    /* ← espacio para que no lo tape el header */
+    scroll-margin-top: 100px;
+    /* agregado */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_galeria.jpg') no-repeat center center/cover;
+}
+
+.contenido-galeria h5 {
+    font-size: 2.8rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+
+
+/* Responsive Equipación */
+@media (max-width: 768px) {
+    .mision-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+
+/* Sección Contacto */
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    padding-top: 100px;
+    /* ← espacio para que no lo tape el header */
+    scroll-margin-top: 100px;
+    /* agregado */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_contacto.jpg') no-repeat center center/cover;
+}
+
+.contenido-contacto h6 {
+    font-size: 2.8rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+
+
+/* Responsive Equipación */
+@media (max-width: 768px) {
+    .mision-vision {
+        flex-direction: column;
+        align-items: center;
+    }
+}
