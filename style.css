@@ -61,7 +61,7 @@ header {
     align-items: center;
     text-align: center;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_inicio2.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_inicio2.jpg') no-repeat center center/cover;
     scroll-margin-top: 100px;
     /* agregado */
 }
@@ -123,7 +123,7 @@ footer {
     scroll-margin-top: 100px;
     /* agregado */
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_profes.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_profes.jpg') no-repeat center center/cover;
 }
 
 .contenido-acerca h2 {
@@ -190,7 +190,7 @@ footer {
     /* ← espacio para que no lo tape el header */
     scroll-margin-top: 100px;
     /* agregado */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_equipacion1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_equipacion1.jpg') no-repeat center center/cover;
 }
 
 .contenido-equipación h4 {
@@ -228,7 +228,7 @@ footer {
     /* ← espacio para que no lo tape el header */
     scroll-margin-top: 100px;
     /* agregado */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_galeria.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_galeria.jpg') no-repeat center center/cover;
 }
 
 .contenido-galeria h5 {
@@ -261,14 +261,100 @@ footer {
     /* ← espacio para que no lo tape el header */
     scroll-margin-top: 100px;
     /* agregado */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/foto_contacto.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_contacto.jpg') no-repeat center center/cover;
+    position: relative;
 }
 
-.contenido-contacto h6 {
-    font-size: 2.8rem;
-    color: #D4AF37;
-    margin-bottom: 20px;
+/* Tatjeta de contacto WhatsApp */
+
+.tarjeta-WhatsApp {
+    width: 240px;
+    background-color: #ffffff;
+    border: 3px solid #D4AF37;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    left: 400px;
+    position: absolute;
 }
+
+.img-contacto_WhastApp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+}
+
+.txt-contacto {
+    font-size: 14px;
+    color: #000000;
+    margin: 10px 0 20px;
+}
+
+.boton_WhatsApp {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton_WhatsApp:hover {
+    background-color: #D4AF37;
+    transform: scale(1.05);
+}
+
+/* Tatjeta de contacto Instagram */
+
+.tarjeta-Instagram {
+    width: 240px;
+    background-color: #ffffff;
+    border: 3px solid #D4AF37;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 280;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    left: 900px;
+    position: absolute;
+}
+
+.img-contacto_Instagram {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+}
+
+.txt-contacto {
+    font-size: 14px;
+    color: #000000;
+    margin: 10px 0 20px;
+}
+
+.boton_Instagram {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton_Instagram:hover {
+    background-color: #D4AF37;
+    transform: scale(1.05);
+}
+
 
 
 
