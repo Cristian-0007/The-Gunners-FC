@@ -1,7 +1,6 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
+    list-style: none;
     box-sizing: border-box;
 }
 
@@ -26,7 +25,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 0 5%;
+    height: 100px;
     background-color: #000000;
     border-bottom: 2px solid #D4AF37;
 }
@@ -51,6 +51,7 @@ header {
 }
 
 .barra_navegacion li a:hover {
+    display: flex;
     color: #ffffff;
 }
 
@@ -229,6 +230,7 @@ footer {
     scroll-margin-top: 100px;
     /* agregado */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_galeria.jpg') no-repeat center center/cover;
+
 }
 
 .contenido-galeria h5 {
@@ -237,6 +239,59 @@ footer {
     margin-bottom: 20px;
 }
 
+
+.carousel-container {
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    width: 100%;
+}
+
+.carousel-track img {
+    width: 700px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #D4AF37;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 18px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.carousel-btn.left {
+    left: 10px;
+}
+
+.carousel-btn.right {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: #D4AF37;
+    color: #000;
+}
 
 
 /* Responsive Equipación */
@@ -265,6 +320,16 @@ footer {
     position: relative;
 }
 
+/* Contenedor de tarjetas */
+
+.contenedor_contacto {
+    display: flex;
+    justify-content: center; /* centra las tarjetas horizontalmente */
+    gap: 30px; /* espacio entre tarjetas */
+    flex-wrap: wrap; /* permite que bajen si no caben */
+    padding: 40px 20px;
+}
+
 /* Tatjeta de contacto WhatsApp */
 
 .tarjeta-WhatsApp {
@@ -274,10 +339,8 @@ footer {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    width: 300;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    left: 400px;
-    position: absolute;
+
 }
 
 .img-contacto_WhastApp {
@@ -321,8 +384,6 @@ footer {
     text-align: center;
     width: 280;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    left: 900px;
-    position: absolute;
 }
 
 .img-contacto_Instagram {
@@ -352,6 +413,49 @@ footer {
 
 .boton_Instagram:hover {
     background-color: #D4AF37;
+    transform: scale(1.05);
+}
+
+/* Tatjeta de Ubicacion */
+
+.tarjeta-Ubicación {
+    width: 240px;
+    background-color: #ffffff;
+    border: 3px solid #D4AF37;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 280;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.img-ubicacion {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+}
+
+.txt-contacto {
+    font-size: 14px;
+    color: #000000;
+    margin: 10px 0 20px;
+}
+
+.boton_Ubicacion {
+    background-color: #D4AF37;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton_Ubicacion:hover {
+    background-color: #000;
     transform: scale(1.05);
 }
 
