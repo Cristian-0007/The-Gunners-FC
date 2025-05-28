@@ -55,6 +55,59 @@ header {
     color: #ffffff;
 }
 
+/* menu hamburguesa */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    display: none;
+}
+
+.menu_icono {
+    width: 25px;
+}
+
+label {
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:900px){
+
+
+    label {
+        display: block;
+        z-index: 1001;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .barra_navegacion {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #menu:checked ~ .menu {
+        display: flex;
+    }
+}
+
+
+
 /* Sección Inicio */
 .inicio {
     display: flex;
