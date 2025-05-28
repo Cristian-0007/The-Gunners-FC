@@ -1,7 +1,6 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
+    list-style: none;
     box-sizing: border-box;
 }
 
@@ -26,7 +25,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 0 5%;
+    height: 100px;
     background-color: #000000;
     border-bottom: 2px solid #D4AF37;
 }
@@ -51,6 +51,7 @@ header {
 }
 
 .barra_navegacion li a:hover {
+    display: flex;
     color: #ffffff;
 }
 
@@ -319,6 +320,16 @@ footer {
     position: relative;
 }
 
+/* Contenedor de tarjetas */
+
+.contenedor_contacto {
+    display: flex;
+    justify-content: center; /* centra las tarjetas horizontalmente */
+    gap: 30px; /* espacio entre tarjetas */
+    flex-wrap: wrap; /* permite que bajen si no caben */
+    padding: 40px 20px;
+}
+
 /* Tatjeta de contacto WhatsApp */
 
 .tarjeta-WhatsApp {
@@ -328,10 +339,8 @@ footer {
     border-radius: 10px;
     padding: 30px;
     text-align: center;
-    width: 300;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    left: 400px;
-    position: absolute;
+
 }
 
 .img-contacto_WhastApp {
@@ -375,8 +384,6 @@ footer {
     text-align: center;
     width: 280;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    left: 900px;
-    position: absolute;
 }
 
 .img-contacto_Instagram {
@@ -406,6 +413,49 @@ footer {
 
 .boton_Instagram:hover {
     background-color: #D4AF37;
+    transform: scale(1.05);
+}
+
+/* Tatjeta de Ubicacion */
+
+.tarjeta-Ubicación {
+    width: 240px;
+    background-color: #ffffff;
+    border: 3px solid #D4AF37;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    width: 280;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.img-ubicacion {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 15px;
+}
+
+.txt-contacto {
+    font-size: 14px;
+    color: #000000;
+    margin: 10px 0 20px;
+}
+
+.boton_Ubicacion {
+    background-color: #D4AF37;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton_Ubicacion:hover {
+    background-color: #000;
     transform: scale(1.05);
 }
 
