@@ -235,29 +235,101 @@ footer {
 /* Sección Equipación */
 
 .equipación {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 90vh;
-    padding-top: 100px;
-    /* ← espacio para que no lo tape el header */
+    background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)), url('/images/secciones/foto_equipacion1.jpg') no-repeat center center/cover;
+    padding-bottom: 40px;
+    box-sizing: border-box;
     scroll-margin-top: 100px;
-    /* agregado */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/secciones/foto_equipacion1.jpg') no-repeat center center/cover;
+    position: relative;
 }
 
-.contenido-equipación h4 {
-    font-size: 2.8rem;
+.equipaciones {
+    width: 100%;
+    text-align: center;
     color: #D4AF37;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin: 40px 0 30px 0;
 }
 
-.contenido-equipación p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    color: #dddddd;
+
+
+.contenido-equipación {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.contenido-equipación img {
+    max-width: 250px;
+    height: auto;
+    aspect-ratio: 250 / 370;
+    border-radius: 12px;
+    border: 3px solid #D4AF37;
+    
+}
+.sudadera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.info-sudadera {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nombre_equipacion {
+    display: block;
+    font-weight: bold;
+    color: #D4AF37;
+    font-size: 1.1rem;
+}
+
+.descripcion {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+/* Tooltip para la categoría */
+.info-hover {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    background: #222;
+    color: #fff;
+    border: 2px solid #D4AF37;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 1.1rem;
+    pointer-events: none;
+    max-width: 320px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    white-space: pre-line;
+}
+
+
+
+
+
+.contenido-equipación img:hover {
+    transform: scale(1.07);
 }
 
 /* Responsive Equipación */
@@ -525,7 +597,7 @@ footer {
 
 
 .imagenes-cuerpo-tecnico img {
-     max-width: 250px;
+    max-width: 250px;
     height: auto;
     aspect-ratio: 250 / 370;
     border-radius: 12px;
