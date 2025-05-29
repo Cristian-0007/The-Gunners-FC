@@ -278,7 +278,7 @@ footer {
     align-items: center;
     text-align: center;
     height: 90vh;
-    padding-top: 100px;
+
     /* ← espacio para que no lo tape el header */
     scroll-margin-top: 100px;
     /* agregado */
@@ -289,62 +289,24 @@ footer {
 .contenido-galeria h5 {
     font-size: 2.8rem;
     color: #D4AF37;
-    margin-bottom: 20px;
 }
 
-
-.carousel-container {
-    position: relative;
-    width: 700px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
-    width: 100%;
-}
-
-.carousel-track img {
-    width: 700px;
-    height: 300px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 10px;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: #D4AF37;
+.boton_galeria {
+    background-color: #D4AF37;
+    color: #ffffff;
     border: none;
-    font-size: 2rem;
     padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
-    transition: background 0.2s;
+    transition: all 0.3s ease;
 }
 
-.carousel-btn.left {
-    left: 10px;
+.boton_galeria:hover {
+    background-color: #D4AF37;
+    transform: scale(1.05);
 }
 
-.carousel-btn.right {
-    right: 10px;
-}
-
-.carousel-btn:hover {
-    background: #D4AF37;
-    color: #000;
-}
 
 
 /* Responsive Equipación */
@@ -510,6 +472,116 @@ footer {
 .boton_Ubicacion:hover {
     background-color: #000;
     transform: scale(1.05);
+}
+
+/* Cuerpo Técnico */
+.cuerpo-tecnico {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(17,17,17,0.7), rgba(17,17,17,0.7)), url('/images/secciones/foto_cuerpo_tecnico.jpeg') no-repeat center center/cover;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    scroll-margin-top: 100px;
+    position: relative;
+}
+.titulo-cuerpo-tecnico {
+    width: 100%;
+    text-align: center;
+    color: #D4AF37;
+    font-size: 2rem;
+    margin: 40px 0 30px 0;
+}
+
+.contenido-cuerpo-tecnico h4 {
+    font-size: 2rem;
+    margin-bottom: 200px;
+}
+
+.imagenes-cuerpo-tecnico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+.titulo-cuerpo-tecnico {
+    width: 100%;
+    text-align: center;
+    color: #D4AF37;
+    font-size: 2rem;
+    margin: 40px 0 30px 0;
+    z-index: 3;
+    position: relative;
+}
+
+
+.imagenes-cuerpo-tecnico img {
+     max-width: 250px;
+    height: auto;
+    aspect-ratio: 250 / 370;
+    border-radius: 12px;
+    border: 3px solid #D4AF37;
+    
+}
+.tecnico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.info-tecnico {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nombre {
+    display: block;
+    font-weight: bold;
+    color: #D4AF37;
+    font-size: 1.1rem;
+}
+
+.cargo {
+    display: block;
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+/* Tooltip para la categoría */
+.info-hover {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    background: #222;
+    color: #fff;
+    border: 2px solid #D4AF37;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 1.1rem;
+    pointer-events: none;
+    max-width: 320px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    white-space: pre-line;
+}
+
+
+
+
+
+.imagenes-cuerpo-tecnico img:hover {
+    transform: scale(1.07);
 }
 
 
