@@ -1,0 +1,12 @@
+# Copia de seguridad local del sitio anterior (pesa ~65 MB, no se sube al repositorio)
+_respaldo_original/
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.claude/
+
+# Wrangler (Cloudflare)
+.wrangler/

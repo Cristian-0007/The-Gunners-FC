@@ -1,0 +1,3 @@
+# Redirecciones de Cloudflare Pages
+# La galería antigua (página aparte) ahora es una sección de la página principal
+/galeriaTHG/*  /#galeria  301

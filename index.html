@@ -1,190 +1,435 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="images/The_Gunners.jpg" type="image/x-icon">
+    <!-- ===================== Metadatos básicos ===================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Gunners Fútbol Club</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="animaciones.js" defer> </script>
-    <script src="cuerpoT_equipacion.js" defer> </script>
+    <title>The Gunners Fútbol Club | Escuela de fútbol en Soacha</title>
+    <meta name="description" content="The Gunners F.C. es un club de formación deportiva en fútbol para niños y jóvenes de Soacha, Cundinamarca. Formando campeones dentro y fuera del campo.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- ===================== Open Graph (vista previa al compartir en WhatsApp, Facebook, etc.) ===================== -->
+    <!-- og:url y og:image deben ser URLs absolutas: se completan con el dominio al publicar en Cloudflare Pages -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:site_name" content="The Gunners Fútbol Club">
+    <meta property="og:title" content="The Gunners Fútbol Club">
+    <meta property="og:description" content="Escuela de fútbol en Soacha. Formando campeones dentro y fuera del campo.">
+    <meta property="og:image" content="assets/img/logo/og-image.jpg">
+
+    <!-- ===================== Íconos ===================== -->
+    <link rel="icon" type="image/png" href="assets/img/logo/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png">
+
+    <!-- ===================== Fuentes y estilos ===================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- ===================== Scripts (defer: se ejecutan en orden cuando el HTML ya cargó) ===================== -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/navegacion.js" defer></script>
+    <script src="assets/js/whatsapp.js" defer></script>
+    <script src="assets/js/catalogo.js" defer></script>
+    <script src="assets/js/galeria.js" defer></script>
+    <script src="assets/js/cuerpo-tecnico.js" defer></script>
 </head>
 <body>
 
-    <!-- Header (Navegación) -->
-    <header>
-        <div class="logo">
-            <img src="images/The_Gunners.jpg" alt="The Gunners Fútbol Club">
-        </div>
-        
+    <!-- Sprite de íconos SVG reutilizables (se usan con <use href="#...">) -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="icono-whatsapp" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </symbol>
+    </svg>
 
-        <input type="checkbox" id="menu" />
-        <label for="menu">
-            <img src="images/secciones/menu.png" class="menu_icono" alt="Menu">
-        </label>
+    <!-- Enlace de accesibilidad: permite saltar el menú con el teclado -->
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
 
-        <div class="menu">
-        <nav>
-            <ul class="barra_navegacion">
-                <li class="item"><a href="#inicio">INICIO</a></li>
-                <li class="item"><a href="#acerca">ACERCA</a></li>
-                <li class="item"><a href="#equipación">EQUIPACIÓN</a></li>
-                <li class="item"><a href="#galeria">GALERÍA</a></li>
-                <li class="item"><a href="#cuerpo-tecnico">CUERPO TÉCNICO</a></li>
-                <li class="item"><a href="#contacto">CONTACTANOS</a></li>
+    <!-- ===================================================================
+         ENCABEZADO Y NAVEGACIÓN
+         =================================================================== -->
+    <header class="encabezado">
+        <a class="encabezado__logo" href="#inicio" aria-label="The Gunners Fútbol Club - Inicio">
+            <img src="assets/img/logo/the-gunners.webp" alt="Escudo de The Gunners Fútbol Club" width="64" height="64">
+        </a>
+
+        <!-- Botón hamburguesa (solo visible en pantallas pequeñas) -->
+        <button class="menu-boton" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+            <span class="menu-boton__linea"></span>
+            <span class="menu-boton__linea"></span>
+            <span class="menu-boton__linea"></span>
+        </button>
+
+        <nav class="navegacion" id="menu-principal" aria-label="Navegación principal">
+            <ul class="navegacion__lista">
+                <li><a class="navegacion__enlace" href="#inicio">Inicio</a></li>
+                <li><a class="navegacion__enlace" href="#acerca">Acerca</a></li>
+                <li><a class="navegacion__enlace" href="#equipacion">Equipación</a></li>
+                <li><a class="navegacion__enlace" href="#galeria">Galería</a></li>
+                <li><a class="navegacion__enlace" href="#cuerpo-tecnico">Cuerpo técnico</a></li>
+                <li><a class="navegacion__enlace" href="#contacto">Contáctanos</a></li>
             </ul>
         </nav>
-        </div>
     </header>
 
-    <!-- Sección de Inicio -->
-    <section id="inicio" class="inicio" >
-        <div class="contenido-inicio">
-            <h1>Bienvenidos a The Gunners Fútbol Club</h1>
-            <p>Formando campeones dentro y fuera del campo</p>
-        </div>
-    </section>
+    <main id="contenido">
 
-    <!-- Sección de Acerca -->
-    <section id="acerca" class="acerca">
-        <div class="contenido-acerca">
-            <h2>Acerca de Nosotros</h2>
-        <p>En The Gunners Fútbol Club nos apasiona formar jugadores con excelencia deportiva y valores humanos. Nuestro enfoque va más allá del entrenamiento: buscamos forjar líderes dentro y fuera de la cancha.</p>
-
-        <div class="mision-vision">
-            <div class="mision">
-                <h3>Misión</h3>
-                <p>El club deportivo THE GUNNERS F.C. es un club de formación deportiva en fútbol que promueve actividades formativas y competitivas en dicho deporte, dirigidas a los niños y jóvenes del municipio de Soacha. Generando un aprendizaje, conocimiento y desarrollo integral mediante los fundamentos técnicos, tácticos, y valores en el deportista.</p>
+        <!-- ===================================================================
+             INICIO (portada)
+             =================================================================== -->
+        <section id="inicio" class="seccion inicio">
+            <div class="inicio__contenido">
+                <h1 class="inicio__titulo">Bienvenidos a The Gunners Fútbol Club</h1>
+                <p class="inicio__lema">Formando campeones dentro y fuera del campo</p>
+                <div class="inicio__acciones">
+                    <a class="boton boton--dorado" href="#acerca">Conoce el club</a>
+                    <a class="boton boton--contorno" data-whatsapp="general" target="_blank" rel="noopener noreferrer">Escríbenos</a>
+                </div>
             </div>
-            <div class="vision">
-                <h3>Visión</h3>
-                <p>THE GUNNERS F.C. hacia el año 2027 pretende caracterizarse por ser un club líder en su buen desarrollo deportivo, siendo uno de los mejores en su formación integral y competitiva de los niños y jóvenes a través del fútbol en el municipio de Soacha y en Cundinamarca.</p>
+        </section>
+
+        <!-- ===================================================================
+             ACERCA DE NOSOTROS
+             =================================================================== -->
+        <section id="acerca" class="seccion acerca">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Acerca de nosotros</h2>
+                <p class="seccion__intro">
+                    En The Gunners Fútbol Club nos apasiona formar jugadores con excelencia deportiva y valores humanos.
+                    Nuestro enfoque va más allá del entrenamiento: buscamos forjar líderes dentro y fuera de la cancha.
+                </p>
+
+                <div class="mision-vision">
+                    <article class="tarjeta-info">
+                        <h3 class="tarjeta-info__titulo">Misión</h3>
+                        <p>
+                            El club deportivo THE GUNNERS F.C. es un club de formación deportiva en fútbol que promueve
+                            actividades formativas y competitivas en dicho deporte, dirigidas a los niños y jóvenes del
+                            municipio de Soacha. Generamos aprendizaje, conocimiento y desarrollo integral mediante los
+                            fundamentos técnicos, tácticos y los valores del deportista.
+                        </p>
+                    </article>
+                    <article class="tarjeta-info">
+                        <h3 class="tarjeta-info__titulo">Visión</h3>
+                        <p>
+                            Hacia el año 2027, THE GUNNERS F.C. pretende caracterizarse por ser un club líder en su buen
+                            desarrollo deportivo, siendo uno de los mejores en la formación integral y competitiva de
+                            niños y jóvenes a través del fútbol en el municipio de Soacha y en Cundinamarca.
+                        </p>
+                    </article>
+                </div>
             </div>
-        </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección de Equipación -->
-    <section id="equipación" class="equipación"> 
-        <h3 class="equipaciones">Mira nuestro equipamiento deportivo</h3>
-        <p>Adquiere cualquiera de nuestros productos en nuestro WhatsApp corporativo</p>
-        <div class="contenido-equipación">
-            <div class="sudadera">
-        <img src="images/equipacion/sudadera.jpg" alt="sudadera"
-            data-equipacion="Sudadera del club para todas las categorías">
-        <div class="info-sudadera">
-            <span class="nombre_equipacion">Sudadera</span>
-            <span class="descripcion">Sudadera del club</span>
-        </div>
-    </div>
-        </div>
-    </section>
-    <div id="info-hover" class="info-hover"></div>
+        <!-- ===================================================================
+             EQUIPACIÓN (catálogo de productos)
+             Los productos se definen en assets/js/config.js y se dibujan con catalogo.js
+             =================================================================== -->
+        <section id="equipacion" class="seccion equipacion">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Equipamiento deportivo</h2>
+                <p class="seccion__intro">
+                    Adquiere cualquiera de nuestros productos a través de nuestro WhatsApp corporativo.
+                </p>
 
-    <!-- Sección de Galería -->
-    <section id="galeria" class="galeria"> 
-        <div class="contenido-galeria">
-            <h5>Disfruta la galeria de nuestra escuela</h5>
-            <a href="galeriaTHG/indexgaleria.html" target="_blank"><button class="boton_galeria">¡Mira nuestra galería!</button></a>
-        
-    </section>
+                <ul class="catalogo" id="catalogo" aria-label="Productos del club"></ul>
 
-    <!-- Sección Cuerpo Técnico -->
-     
-    <section id="cuerpo-tecnico" class="cuerpo-tecnico">
-    <h4 class="titulo-cuerpo-tecnico">Nuestro Cuerpo Técnico</h4>
-    <div class="imagenes-cuerpo-tecnico">
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_Jeison.jpg" alt="Profe Jeison" data-categoria="Categoría 2013-2014">
-        <div class="info-tecnico">
-            <span class="nombre">Jeison Mahecha</span>
-            <span class="cargo">Presidente del club / Director técnico</span>
-        </div>
-    </div>
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_Daniel.jpg" alt="Profe Daniel"
-            data-categoria="Daniel Steven Mahecha Vargas 
-            Categoría: 2012-2011 
-            Perfil profesional: Profesional en Ciencias del Deporte y la Educación Física, con una trayectoria de 7 años como entrenador deportivo. Ha realizado prácticas profesionales en Independiente Santa Fe, trabajando con las divisiones inferiores y las canteras del equipo femenino. Se destaca por su compromiso y liderazgo en la formación deportiva infantil y juvenil. Ha participado como asistente técnico subcampeón zonal del Baby Fútbol 2023, consolidando su experiencia en procesos de alto rendimiento.">
-        <div class="info-tecnico">
-            <span class="nombre">Daniel Mahecha</span>
-            <span class="cargo">Director técnico</span>
-        </div>
-    </div>
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_Carlos.jpg" alt="Profe Carlos"
-            data-categoria="Carlos Eduardo Paredes Rodriguez
-                            Categoria: 2009 - 2010
-                            Perfil profesional: Licenciado en Educación Física Recreacion y Deporte en formacion Tecnologo en Entrenamiento  Deportivo. Cuenta con más de 7 años de experiencia dirigiendo equipos de fútbol en categorías infantiles y juveniles. Destacado por su enfoque táctico y capacidad de liderazgo en el desarrollo integral de los jugadores">
-        <div class="info-tecnico">
-            <span class="nombre">Carlos Paredes</span>
-            <span class="cargo">Director técnico</span>
-        </div>
-    </div>
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_Angie.jpg" alt="Profe Angie"
-            data-categoria="Angie Lorena Galindo Yanquen
-                            Cargo: Fisioterapeuta
-                            Perfil profesional:
-                            Fisioterapeuta egresada de la Universidad del Rosario. Cuenta con experiencia en el acompañamiento en escenarios deportivos, desempeñándose en el área de prevención, evaluación y rehabilitación de lesiones. Su labor contribuye activamente al rendimiento físico de los jugadores y al reintegro seguro y eficaz del deportista a su práctica deportiva.">
-        <div class="info-tecnico">
-            <span class="nombre">Angie Galindo</span>
-            <span class="cargo">Profesional de la salud</span>
-        </div>
-    </div>
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_John.jpg" alt="Profe John"
-            data-categoria="John Alexander Vargas Vera
-                            Perfil profesional:
-                            Entrenador de arqueros en formación, con más de 5 años de experiencia en la posición de portero en distintas categorías y torneos, logrando destacados resultados. Su enfoque se centra en el desarrollo técnico y de habilidades, impulsando el máximo rendimiento del deportista tanto en lo físico como en lo emocional. Ha participado en diversos torneos locales, departamentales y nacionales, entre ellos el prestigioso torneo Baby Fútbol, contribuyendo al crecimiento competitivo de los arqueros a su cargo.">
-        <div class="info-tecnico">
-            <span class="nombre">John Vargas</span>
-            <span class="cargo">Entrenador de arqueros</span>
-        </div>
-    </div>
-    <div class="tecnico">
-        <img src="galeriaTHG/image/profe_Cristian.png" alt="Profe Cristian"
-            data-categoria="Cristian David Galindo Yanquen
-                            Perfil profesional:
-                            Asistente técnico con aproximadamente un año de experiencia apoyando a la escuela en procesos de formación deportiva. Contribuyendo en aspectos técnicos, físicos y tácticos del entrenamiento de los jugadores. Su compromiso y dedicación se han visto reflejados en su participación como asistente en importantes torneos como el Baby Fútbol 2025, Llaneros y Olimpo, aportando al desarrollo integral del equipo.">
-        <div class="info-tecnico">
-            <span class="nombre">Cristian Galindo</span>
-            <span class="cargo">Asistente técnico</span>
-        </div>
-    </div>
-</div>
-</section>
-<div id="info-hover" class="info-hover"></div>
+                <noscript>
+                    <p class="seccion__intro">Activa JavaScript para ver el catálogo de productos.</p>
+                </noscript>
+            </div>
 
-        <!-- Sección de Contacto -->
-    <section id="contacto" class="contacto"> 
+            <!-- Plantilla de una tarjeta de producto (catalogo.js la clona por cada producto) -->
+            <template id="plantilla-producto">
+                <li class="producto">
+                    <div class="producto__marco">
+                        <img class="producto__imagen" src="" alt="" loading="lazy" decoding="async" width="700" height="933">
+                    </div>
+                    <div class="producto__info">
+                        <h3 class="producto__nombre"></h3>
+                        <p class="producto__descripcion"></p>
+                        <p class="producto__precio" hidden></p>
+                        <a class="boton boton--whatsapp producto__boton" target="_blank" rel="noopener noreferrer">
+                            <svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg>
+                            <span>Comprar por WhatsApp</span>
+                        </a>
+                    </div>
+                </li>
+            </template>
+        </section>
 
-        <div class="contenedor_contacto">
-        <div class="tarjeta-WhatsApp">
-            <img src="images/redes_sociales/WhatsApp.png" class="img-contacto_WhastApp" />
-            <p class="txt-contacto"> WhatsApp corporativo</p>
-            <a href="https://wa.me/573001558620 " class="link-WhatssApp" target="_blank"><button class="boton_WhatsApp">¡Escribenos!</button></a>
-        </div>
+        <!-- ===================================================================
+             GALERÍA (carrusel integrado en la página)
+             Para agregar una foto: copia un <li class="carrusel__item"> completo.
+             =================================================================== -->
+        <section id="galeria" class="seccion galeria" aria-labelledby="titulo-galeria">
+            <div class="contenedor galeria__encabezado">
+                <h2 class="seccion__titulo" id="titulo-galeria">Galería</h2>
+                <p class="seccion__intro">Revive los mejores momentos de nuestra escuela.</p>
+            </div>
 
-        <div class="tarjeta-Instagram">
-            <img src="images/redes_sociales/instagram.png" class="img-contacto_Instagram" />
-            <p class="txt-contacto"> ¡Visita nuestro Instagram!</p>
-            <a href="https://www.instagram.com/thegunners_f.c/" class="link-Instagram" target="_blank"><button class="boton_Instagram">¡Visitanos!</button></a>
-        </div>
+            <div class="carrusel" data-carrusel aria-roledescription="carrusel" aria-label="Fotos del club">
+                <ul class="carrusel__lista">
+                    <li class="carrusel__item">
+                        <img class="carrusel__imagen" src="assets/img/galeria/baby-futbol-2022-inauguracion.webp"
+                             alt="Desfile de inauguración del torneo Baby Fútbol 2022 en Soacha" loading="lazy" decoding="async">
+                        <div class="carrusel__contenido">
+                            <p class="carrusel__titulo">Baby</p>
+                            <p class="carrusel__subtitulo">Fútbol</p>
+                            <p class="carrusel__descripcion">La categoría 2011-2012 fue finalista de la Baby Fútbol en el año 2022.</p>
+                        </div>
+                    </li>
 
-        <div class="tarjeta-Ubicación">
-            <img src="images/redes_sociales/ubicacion.png" class="img-ubicacion" />
-            <p class="txt-contacto"> ¡Visita nuetra sede!</p>
-            <a href="https://acortar.link/cBmtcv" class="link-Ubicacion" target="_blank"><button class="boton_Ubicacion">¡Visitanos!</button></a>
-        </div>
-        </div>
-    </section>
-        
+                    <li class="carrusel__item">
+                        <img class="carrusel__imagen" src="assets/img/galeria/baby-futbol-2022-final.webp"
+                             alt="Jugadores de The Gunners durante la final de la Baby Fútbol 2022" loading="lazy" decoding="async">
+                        <div class="carrusel__contenido">
+                            <p class="carrusel__titulo">Baby</p>
+                            <p class="carrusel__subtitulo">Fútbol</p>
+                            <p class="carrusel__descripcion">Reviviendo los mejores momentos de la final de la Baby Fútbol 2022.</p>
+                        </div>
+                    </li>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 The Gunners Fútbol Club. Todos los derechos reservados.</p>
+                    <li class="carrusel__item">
+                        <img class="carrusel__imagen" src="assets/img/galeria/amistoso-santa-fe.webp"
+                             alt="Partido amistoso entre The Gunners e Independiente Santa Fe" loading="lazy" decoding="async">
+                        <div class="carrusel__contenido">
+                            <p class="carrusel__titulo">The Gunners vs</p>
+                            <p class="carrusel__subtitulo">Santa Fe</p>
+                            <p class="carrusel__descripcion">Partido amistoso de la categoría juvenil del club The Gunners contra Independiente Santa Fe.</p>
+                        </div>
+                    </li>
+
+                    <li class="carrusel__item">
+                        <img class="carrusel__imagen" src="assets/img/galeria/baby-futbol-2022-campeones.webp"
+                             alt="Equipo The Gunners con medallas en la final de la Baby Fútbol 2022" loading="lazy" decoding="async">
+                        <div class="carrusel__contenido">
+                            <p class="carrusel__titulo">Baby</p>
+                            <p class="carrusel__subtitulo">Fútbol</p>
+                            <p class="carrusel__descripcion">Conquista de la final de la Baby Fútbol 2022 con la categoría 2011-2012.</p>
+                        </div>
+                    </li>
+
+                    <li class="carrusel__item">
+                        <img class="carrusel__imagen" src="assets/img/galeria/familia-gunners.webp"
+                             alt="Foto grupal de The Gunners junto a otro club en la cancha" loading="lazy" decoding="async">
+                        <div class="carrusel__contenido">
+                            <p class="carrusel__titulo">The Gunners</p>
+                            <p class="carrusel__subtitulo">Familia</p>
+                            <p class="carrusel__descripcion">Compartiendo la pasión por el fútbol con otros clubes.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Controles anterior / siguiente -->
+                <div class="carrusel__controles">
+                    <button class="carrusel__flecha" type="button" data-accion="anterior" aria-label="Foto anterior">&#8249;</button>
+                    <button class="carrusel__flecha" type="button" data-accion="siguiente" aria-label="Foto siguiente">&#8250;</button>
+                </div>
+
+                <!-- Barra de progreso del cambio automático -->
+                <div class="carrusel__progreso" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             CUERPO TÉCNICO
+             Cada tarjeta guarda el perfil completo en .tecnico__perfil (oculto);
+             cuerpo-tecnico.js lo muestra en una ventana al hacer clic.
+             =================================================================== -->
+        <section id="cuerpo-tecnico" class="seccion cuerpo-tecnico">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Nuestro cuerpo técnico</h2>
+                <p class="seccion__intro">Toca cualquier foto para conocer el perfil de nuestros profesionales.</p>
+
+                <ul class="equipo-tecnico">
+                    <li>
+                        <article class="tecnico" data-nombre-completo="Jeison Mahecha">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/jeison.webp" alt="Jeison Mahecha" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">Jeison Mahecha</h3>
+                            <p class="tecnico__cargo">Presidente del club / Director técnico</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p><strong>Categoría:</strong> 2013 - 2014</p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="tecnico" data-nombre-completo="Daniel Steven Mahecha Vargas">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/daniel.webp" alt="Daniel Mahecha" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">Daniel Mahecha</h3>
+                            <p class="tecnico__cargo">Director técnico</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p><strong>Categoría:</strong> 2011 - 2012</p>
+                                <p>
+                                    Profesional en Ciencias del Deporte y la Educación Física, con una trayectoria de 7 años como
+                                    entrenador deportivo. Realizó prácticas profesionales en Independiente Santa Fe, trabajando con
+                                    las divisiones inferiores y las canteras del equipo femenino. Se destaca por su compromiso y
+                                    liderazgo en la formación deportiva infantil y juvenil. Fue asistente técnico subcampeón zonal
+                                    del Baby Fútbol 2023, consolidando su experiencia en procesos de alto rendimiento.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="tecnico" data-nombre-completo="Carlos Eduardo Paredes Rodríguez">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/carlos.webp" alt="Carlos Paredes" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">Carlos Paredes</h3>
+                            <p class="tecnico__cargo">Director técnico</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p><strong>Categoría:</strong> 2009 - 2010</p>
+                                <p>
+                                    Licenciado en Educación Física, Recreación y Deporte, y en formación como Tecnólogo en
+                                    Entrenamiento Deportivo. Cuenta con más de 7 años de experiencia dirigiendo equipos de fútbol
+                                    en categorías infantiles y juveniles. Se destaca por su enfoque táctico y su capacidad de
+                                    liderazgo en el desarrollo integral de los jugadores.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="tecnico" data-nombre-completo="Angie Lorena Galindo Yanquen">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/angie.webp" alt="Angie Galindo" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">Angie Galindo</h3>
+                            <p class="tecnico__cargo">Profesional de la salud</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p><strong>Cargo:</strong> Fisioterapeuta</p>
+                                <p>
+                                    Fisioterapeuta egresada de la Universidad del Rosario. Cuenta con experiencia en el
+                                    acompañamiento en escenarios deportivos, desempeñándose en el área de prevención, evaluación y
+                                    rehabilitación de lesiones. Su labor contribuye activamente al rendimiento físico de los
+                                    jugadores y al reintegro seguro y eficaz del deportista a su práctica deportiva.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="tecnico" data-nombre-completo="John Alexander Vargas Vera">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/john.webp" alt="John Vargas" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">John Vargas</h3>
+                            <p class="tecnico__cargo">Entrenador de arqueros</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p>
+                                    Entrenador de arqueros en formación, con más de 5 años de experiencia en la posición de portero
+                                    en distintas categorías y torneos, logrando destacados resultados. Su enfoque se centra en el
+                                    desarrollo técnico y de habilidades, impulsando el máximo rendimiento del deportista tanto en lo
+                                    físico como en lo emocional. Ha participado en diversos torneos locales, departamentales y
+                                    nacionales, entre ellos el prestigioso torneo Baby Fútbol, contribuyendo al crecimiento
+                                    competitivo de los arqueros a su cargo.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+
+                    <li>
+                        <article class="tecnico" data-nombre-completo="Cristian David Galindo Yanquen">
+                            <button class="tecnico__foto" type="button" aria-haspopup="dialog">
+                                <img src="assets/img/cuerpo-tecnico/cristian.webp" alt="Cristian Galindo" loading="lazy" decoding="async" width="600" height="750">
+                                <span class="tecnico__ver">Ver perfil</span>
+                            </button>
+                            <h3 class="tecnico__nombre">Cristian Galindo</h3>
+                            <p class="tecnico__cargo">Director técnico</p>
+                            <div class="tecnico__perfil" hidden>
+                                <p>
+                                    Asistente técnico con aproximadamente un año de experiencia y director técnico que apoya a la
+                                    escuela en procesos de formación deportiva. Contribuye en aspectos técnicos, físicos y tácticos
+                                    del entrenamiento de los jugadores. Su compromiso y dedicación se han reflejado en su
+                                    participación como asistente en importantes torneos como el Baby Fútbol 2025, Llaneros y
+                                    Olimpo, aportando al desarrollo integral del equipo.
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Ventana (modal) donde se muestra el perfil completo -->
+            <dialog class="modal" id="modal-perfil" aria-labelledby="modal-perfil-nombre">
+                <button class="modal__cerrar" type="button" aria-label="Cerrar perfil">&times;</button>
+                <div class="modal__cuerpo">
+                    <img class="modal__foto" src="" alt="" width="600" height="750">
+                    <div class="modal__texto">
+                        <h3 class="modal__nombre" id="modal-perfil-nombre"></h3>
+                        <p class="modal__cargo"></p>
+                        <div class="modal__perfil"></div>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+
+        <!-- ===================================================================
+             CONTACTO
+             =================================================================== -->
+        <section id="contacto" class="seccion contacto">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Contáctanos</h2>
+                <p class="seccion__intro">Estamos para resolver tus dudas sobre inscripciones, horarios y productos.</p>
+
+                <ul class="contacto__tarjetas">
+                    <li class="tarjeta-contacto">
+                        <img class="tarjeta-contacto__icono" src="assets/img/iconos/whatsapp.webp" alt="" width="96" height="96" loading="lazy">
+                        <h3 class="tarjeta-contacto__titulo">WhatsApp corporativo</h3>
+                        <a class="boton boton--negro" data-whatsapp="general" target="_blank" rel="noopener noreferrer">¡Escríbenos!</a>
+                    </li>
+
+                    <li class="tarjeta-contacto">
+                        <img class="tarjeta-contacto__icono" src="assets/img/iconos/instagram.webp" alt="" width="96" height="96" loading="lazy">
+                        <h3 class="tarjeta-contacto__titulo">¡Visita nuestro Instagram!</h3>
+                        <a class="boton boton--negro" href="https://www.instagram.com/thegunners_f.c/" target="_blank" rel="noopener noreferrer">@thegunners_f.c</a>
+                    </li>
+
+                    <li class="tarjeta-contacto">
+                        <img class="tarjeta-contacto__icono" src="assets/img/iconos/ubicacion.webp" alt="" width="96" height="96" loading="lazy">
+                        <h3 class="tarjeta-contacto__titulo">¡Visita nuestra sede!</h3>
+                        <a class="boton boton--negro" href="https://www.google.com/maps/place/Coliseo+Le%C3%B3n+XIII/@4.5950453,-74.1940555,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f9fad63080711:0xba53253a4081ec28!8m2!3d4.5950453!4d-74.1940555!16s%2Fg%2F11clrs2j33" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                    </li>
+                </ul>
+
+                <!-- Mapa de la sede (se carga solo cuando el usuario llega a esta parte) -->
+                <div class="contacto__mapa">
+                    <iframe
+                        title="Mapa de la sede de The Gunners F.C. - Coliseo León XIII, Soacha"
+                        src="https://maps.google.com/maps?q=4.5950453,-74.1940555&amp;z=16&amp;output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================================
+         PIE DE PÁGINA
+         =================================================================== -->
+    <footer class="pie">
+        <img class="pie__logo" src="assets/img/logo/the-gunners.webp" alt="" width="48" height="48" loading="lazy">
+        <p>© <span id="anio-actual">2025</span> The Gunners Fútbol Club. Todos los derechos reservados.</p>
+        <p class="pie__ubicacion">Soacha, Cundinamarca - Colombia</p>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a class="whatsapp-flotante" data-whatsapp="general" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+        <svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg>
+    </a>
 
 </body>
 </html>
