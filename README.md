@@ -1,5 +1,7 @@
 # The Gunners Fútbol Club - Sitio web
 
+🌐 **Sitio publicado:** <https://the-gunners-fc.pages.dev>
+
 Página web oficial de **The Gunners F.C.**, escuela de formación deportiva en fútbol para niños y jóvenes de Soacha, Cundinamarca.
 
 Es un sitio estático de una sola página (HTML + CSS + JavaScript, sin dependencias ni proceso de compilación), publicado en [Cloudflare Pages](https://pages.cloudflare.com) desde este repositorio de GitHub.
