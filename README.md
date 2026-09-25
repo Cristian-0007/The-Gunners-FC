@@ -6,7 +6,7 @@ Página web oficial de **The Gunners F.C.**, escuela de formación deportiva en 
 
 Es un sitio estático de una sola página (HTML + CSS + JavaScript, sin dependencias ni proceso de compilación), publicado en [Cloudflare Pages](https://pages.cloudflare.com) desde este repositorio de GitHub.
 
-**Publicar cambios:** cualquier cambio que se suba a la rama `main` se publica automáticamente en 1-2 minutos.
+**Publicar cambios:** cualquier cambio que se suba a la rama `master` se publica automáticamente en 1-2 minutos.
 
 ## Estructura
 
